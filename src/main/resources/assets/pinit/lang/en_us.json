@@ -1,0 +1,33 @@
+{
+  "sounds.pinit.pin": "Pin",
+  "sounds.pinit.pin_deny": "Pin denied",
+
+  "category.pinit.general": "PinIt",
+
+  "key.pinit.open_config": "Open Config",
+  "key.pinit.pin_recipe": "Pin Recipe",
+
+  "pinit.config.title": "PinIt Config",
+  "pinit.config.category.general": "PinIt",
+
+  "pinit.config.option.pinShape": "Pin Shape",
+  "pinit.config.option.pinShape.tooltip": "Changes the shape of the pin",
+
+  "pinit.config.option.pinColor": "Pin Color",
+  "pinit.config.option.pinColor.tooltip": "Changes the color of the pin",
+
+  "pinit.config.option.totalCountMode": "Total Count Mode",
+  "pinit.config.option.totalCountMode.tooltip": "If enabled, the HUD will display the combined total of an item found across your entire inventory. If disabled, it only shows the stack size in the specific pinned slot.",
+
+  "pinit.config.option.enableSlotPinning": "Inventory Slot Pinning",
+  "pinit.config.option.enableSlotPinning.tooltip": "Completely toggles the slot pinning feature. If disabled, you cannot pin/unpin inventory slots. (saved pins are preserved).",
+
+  "pinit.config.option.enableRecipePinning": "Recipe Book Pinning",
+  "pinit.config.option.enableRecipePinning.tooltip": "Completely toggles the recipe pinning feature. If disabled, you cannot pin/unpin recipes in the recipe book (saved pins are preserved)",
+
+  "pinit.shape.square_pin": "Square Pin",
+  "pinit.shape.circle_pin": "Circle Pin",
+  "pinit.shape.paper_clip": "Paper Clip",
+  "pinit.shape.star": "Star",
+  "pinit.shape.heart": "Heart"
+}

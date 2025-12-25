@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "pinit",
+	"version": "${version}",
+	"name": "PinIt",
+	"accessWidener": "pinit.accesswidener",
+	"description": "A mod that allows you to pin recipes :)",
+	"authors": [
+		"DomixCZE"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "ARR",
+	"icon": "assets/pinit/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.domixcze.pinit.PinIt"
+		],
+		"fabric-datagen": [
+			"net.domixcze.pinit.PinItDataGenerator"
+		],
+		"client": [ "net.domixcze.pinit.PinItClient"
+		]
+	},
+	"mixins": [
+		"pinit.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

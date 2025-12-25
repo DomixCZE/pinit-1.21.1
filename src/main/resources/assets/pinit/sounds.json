@@ -1,0 +1,14 @@
+{
+  "pin": {
+    "subtitle": "sounds.pinit.pin",
+    "sounds": [
+      "pinit:pin"
+    ]
+  },
+  "pin_deny": {
+    "subtitle": "sounds.pinit.pin_deny",
+    "sounds": [
+      "pinit:pin_deny"
+    ]
+  }
+}

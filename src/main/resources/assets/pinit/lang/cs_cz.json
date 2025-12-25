@@ -1,0 +1,33 @@
+{
+  "sounds.pinit.pin": "Špendlík",
+  "sounds.pinit.pin_deny": "Špendlík zamítnut",
+
+  "category.pinit.general": "PinIt",
+
+  "key.pinit.open_config": "Nastavení",
+  "key.pinit.pin_recipe": "Připnout Recept",
+
+  "pinit.config.title": "PinIt Nastavení",
+  "pinit.config.category.general": "PinIt",
+
+  "pinit.config.option.pinShape": "Tvar Špendlíku",
+  "pinit.config.option.pinShape.tooltip": "Mění tvar špendlíku",
+
+  "pinit.config.option.pinColor": "Barva Špendlíku",
+  "pinit.config.option.pinColor.tooltip": "Mění barvu špendlíku",
+
+  "pinit.config.option.totalCountMode": "Režim celkového počtu",
+  "pinit.config.option.totalCountMode.tooltip": "Pokud je tato volba zapnuta, HUD bude zobrazovat součet všech kusů daného předmětu v celém inventáři. Pokud je vypnuta, zobrazí se pouze počet v konkrétním připnutém slotu.",
+
+  "pinit.config.option.enableSlotPinning": "Připínání slotů v inventáři",
+  "pinit.config.option.enableSlotPinning.tooltip": "Úplně vypne funkci připínání slotů. Pokud je vypnuto, nemůžete připínat/odepínat sloty v inventáři (uložené špendlíky zůstanou zachovány).",
+
+  "pinit.config.option.enableRecipePinning": "Připínání v knize receptů",
+  "pinit.config.option.enableRecipePinning.tooltip": "Úplně vypne funkci připínání receptů. Pokud je vypnuto, nemůžete připínat/odepínat recepty v knize receptů (uložené špendlíky zůstanou zachovány).",
+
+  "pinit.shape.square_pin": "Hranatý Špendlík",
+  "pinit.shape.circle_pin": "Kulatý Špendlík",
+  "pinit.shape.paper_clip": "Svorka",
+  "pinit.shape.star": "Hvězdička",
+  "pinit.shape.heart": "Srdíčko"
+}
