@@ -7,6 +7,9 @@
   "key.pinit.open_config": "Open Config",
   "key.pinit.pin_recipe": "Pin Recipe",
 
+  "pinit.position.left": "Left",
+  "pinit.position.right": "Right",
+
   "pinit.config.title": "PinIt Config",
   "pinit.config.category.general": "PinIt",
 
@@ -25,9 +28,29 @@
   "pinit.config.option.enableRecipePinning": "Recipe Book Pinning",
   "pinit.config.option.enableRecipePinning.tooltip": "Completely toggles the recipe pinning feature. If disabled, you cannot pin/unpin recipes in the recipe book (saved pins are preserved)",
 
+  "pinit.config.option.hudPosition": "HUD Position",
+  "pinit.config.option.hudPosition.tooltip": "Changes which side of the screen the pinned items appear on.",
+
+  "pinit.config.option.hudTextColor": "HUD Text Color",
+  "pinit.config.option.hudTextColor.tooltip": "Sets the color of the item count text for pinned items.",
+
+  "pinit.config.option.hudIconScale": "HUD Scale",
+  "pinit.config.option.hudIconScale.tooltip": "Adjusts the size of pinned items and text displayed on your HUD.",
+
+  "pinit.config.option.enableHudAnimations": "Enable HUD Animations",
+  "pinit.config.option.enableHudAnimations.tooltip": "Enables a smooth visual 'bounce' effect when the count of a pinned item changes.",
+
   "pinit.shape.square_pin": "Square Pin",
   "pinit.shape.circle_pin": "Circle Pin",
   "pinit.shape.paper_clip": "Paper Clip",
   "pinit.shape.star": "Star",
-  "pinit.shape.heart": "Heart"
+  "pinit.shape.heart": "Heart",
+  "pinit.shape.floppy_disk": "Floppy Disk",
+  "pinit.shape.creeper": "Creeper",
+  "pinit.shape.circle": "Circle",
+  "pinit.shape.lock": "Lock",
+  "pinit.shape.bat": "Bat",
+  "pinit.shape.octopus": "Octopus",
+  "pinit.shape.cross": "Cross",
+  "pinit.shape.checkmark": "Checkmark"
 }

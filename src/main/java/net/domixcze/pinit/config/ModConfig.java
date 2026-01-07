@@ -22,6 +22,11 @@ public class ModConfig {
     public boolean enableSlotPinning = true;
     public boolean enableRecipePinning = true;
 
+    public HudPosition hudPosition = HudPosition.RIGHT;
+    public int hudTextColor = 0xFFFFFF;
+    public float hudIconScale = 1.0f;
+    public boolean enableHudAnimations = true;
+
     public PinShape selectedShape = PinShape.SQUARE_PIN;
     public int pinColor = 0x5555ff;
     public java.util.List<String> pinnedRecipeIds = new java.util.ArrayList<>();
@@ -50,6 +55,10 @@ public class ModConfig {
             this.base = base;
             this.overlay = overlay;
         }
+    }
+
+    public enum HudPosition {
+        LEFT, RIGHT
     }
 
     public static ModConfig INSTANCE = new ModConfig();

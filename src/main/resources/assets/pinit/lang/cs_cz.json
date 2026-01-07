@@ -7,6 +7,9 @@
   "key.pinit.open_config": "Nastavení",
   "key.pinit.pin_recipe": "Připnout Recept",
 
+  "pinit.position.left": "Vlevo",
+  "pinit.position.right": "Vpravo",
+
   "pinit.config.title": "PinIt Nastavení",
   "pinit.config.category.general": "PinIt",
 
@@ -25,9 +28,29 @@
   "pinit.config.option.enableRecipePinning": "Připínání v knize receptů",
   "pinit.config.option.enableRecipePinning.tooltip": "Úplně vypne funkci připínání receptů. Pokud je vypnuto, nemůžete připínat/odepínat recepty v knize receptů (uložené špendlíky zůstanou zachovány).",
 
+  "pinit.config.option.hudPosition": "Pozice HUD",
+  "pinit.config.option.hudPosition.tooltip": "Změní, na které straně obrazovky se zobrazují připnuté předměty.",
+
+  "pinit.config.option.hudTextColor": "Barva textu v HUD",
+  "pinit.config.option.hudTextColor.tooltip": "Nastaví barvu textu počtu u připnutých předmětů.",
+
+  "pinit.config.option.hudIconScale": "Velikost HUD",
+  "pinit.config.option.hudIconScale.tooltip": "Upraví velikost ikon připnutých předmětů a textu v HUD.",
+
+  "pinit.config.option.enableHudAnimations": "Povolit animace HUD",
+  "pinit.config.option.enableHudAnimations.tooltip": "Povolí plynulý vizuální efekt 'vyskočení', když se změní počet připnutého předmětu.",
+
   "pinit.shape.square_pin": "Hranatý Špendlík",
   "pinit.shape.circle_pin": "Kulatý Špendlík",
   "pinit.shape.paper_clip": "Svorka",
   "pinit.shape.star": "Hvězdička",
-  "pinit.shape.heart": "Srdíčko"
+  "pinit.shape.heart": "Srdíčko",
+  "pinit.shape.floppy_disk": "Disketa",
+  "pinit.shape.creeper": "Creeper",
+  "pinit.shape.circle": "Kolečko",
+  "pinit.shape.lock": "Zámek",
+  "pinit.shape.bat": "Netopýr",
+  "pinit.shape.octopus": "Chobotnice",
+  "pinit.shape.cross": "Křížek",
+  "pinit.shape.checkmark": "Fajfka"
 }
