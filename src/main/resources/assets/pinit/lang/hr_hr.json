@@ -1,0 +1,56 @@
+{
+  "sounds.pinit.pin": "Označi",
+  "sounds.pinit.pin_deny": "Označavanje odbijeno",
+
+  "category.pinit.general": "PinIt",
+
+  "key.pinit.open_config": "Otvori konfiguraciju",
+  "key.pinit.pin_recipe": "Označi recept",
+
+  "pinit.position.left": "Lijevo",
+  "pinit.position.right": "Desno",
+
+  "pinit.config.title": "PinIt konfiguracija",
+  "pinit.config.category.general": "PinIt",
+
+  "pinit.config.option.pinShape": "Oblik oznake",
+  "pinit.config.option.pinShape.tooltip": "Mijenja oblik oznake",
+
+  "pinit.config.option.pinColor": "Boja oznake",
+  "pinit.config.option.pinColor.tooltip": "Mijenja boju oznake",
+
+  "pinit.config.option.totalCountMode": "Način ukupnog brojanja",
+  "pinit.config.option.totalCountMode.tooltip": "Ako je ukuljučeno, HUD će prikazati kombinirani ukupni broj nekog pronađenog predmeta u vašem inventaru. Ako je isključeno, samo će se prikazivati vaša veličina hrpe u nekom specificiranom označenom polju.",
+
+  "pinit.config.option.enableSlotPinning": "Označavanje inventarskog polja",
+  "pinit.config.option.enableSlotPinning.tooltip": "Kompletno prebacuje značajku označivanja polja. Ako je isključeno, onda ne možete označiti/odznačiti inventarska polja (spremljene oznake su očuvane)",
+
+  "pinit.config.option.enableRecipePinning": "Označivanje književnog recepta",
+  "pinit.config.option.enableRecipePinning.tooltip": "Kompletno prebacuje značajku označivanja polja. Ako je isključeno, onda ne možete označiti/odznačiti inventarska polja (spremljene oznake su očuvane).",
+
+  "pinit.config.option.hudPosition": "HUD pozicija",
+  "pinit.config.option.hudPosition.tooltip": "Mijenja na koju stranu zaslona će se označeni predmeti prikazati.",
+
+  "pinit.config.option.hudTextColor": "Boja HUD teksta",
+  "pinit.config.option.hudTextColor.tooltip": "Primjenju boju teksta broja predmeta za prikvačene predmete.",
+
+  "pinit.config.option.hudIconScale": "Veličina HUD-a",
+  "pinit.config.option.hudIconScale.tooltip": "Prilagođuje veličinu prikvačenih predmeta i prikazanog teksta na vašem HUD-u.",
+
+  "pinit.config.option.enableHudAnimations": "Odobri HUD Animacije.",
+  "pinit.config.option.enableHudAnimations.tooltip": "Omogućuje glatki vizualni 'odskakujući' effekt kada broj prikavčenih predmeta se promjeni.",
+
+  "pinit.shape.square_pin": "Kvadratna oznaka",
+  "pinit.shape.circle_pin": "Okrugla oznaka",
+  "pinit.shape.paper_clip": "Spajalica za papir",
+  "pinit.shape.star": "Zvijezda",
+  "pinit.shape.heart": "Srce",
+  "pinit.shape.floppy_disk": "Disketa",
+  "pinit.shape.creeper": "Creeper",
+  "pinit.shape.circle": "Krug",
+  "pinit.shape.lock": "Lokot",
+  "pinit.shape.bat": "Šišmiš",
+  "pinit.shape.octopus": "Hobotnica",
+  "pinit.shape.cross": "Križ",
+  "pinit.shape.checkmark": "Kvačica"
+}
