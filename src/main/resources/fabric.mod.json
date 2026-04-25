@@ -9,8 +9,8 @@
 		"DomixCZE"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/pin-it",
+		"sources": "https://github.com/DomixCZE/pinit-1.21.1"
 	},
 	"license": "ARR",
 	"icon": "assets/pinit/icon.png",
