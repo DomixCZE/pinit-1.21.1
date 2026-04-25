@@ -45,8 +45,9 @@ public class PinnedRecipes {
                 .collect(Collectors.joining(";"));
     }
 
+    @SuppressWarnings("deprecation")
     private static String getIngredientKey(Ingredient ingredient) {
-        return ingredient.getMatchingItems().stream()
+        return ingredient.getMatchingItems()
                 .map(PinnedRecipes::getItemId)
                 .sorted()
                 .collect(Collectors.joining(","));
