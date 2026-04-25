@@ -9,8 +9,8 @@
 		"DomixCZE"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/pin-it",
+		"sources": "https://github.com/DomixCZE/pinit-1.21.1"
 	},
 	"license": "ARR",
 	"icon": "assets/pinit/icon.png",
@@ -19,9 +19,6 @@
 		"main": [
 			"net.domixcze.pinit.PinIt"
 		],
-		"fabric-datagen": [
-			"net.domixcze.pinit.PinItDataGenerator"
-		],
 		"client": [ "net.domixcze.pinit.PinItClient"
 		]
 	},
@@ -29,8 +26,8 @@
 		"pinit.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.18.3",
-		"minecraft": "~1.21.1",
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~1.21.2",
 		"java": ">=21",
 		"fabric-api": "*"
 	}

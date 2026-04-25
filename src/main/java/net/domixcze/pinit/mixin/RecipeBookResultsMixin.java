@@ -25,7 +25,7 @@ public class RecipeBookResultsMixin {
 
         for (RecipeResultCollection collection : results) {
             boolean isPinned = collection.getAllRecipes().stream()
-                    .anyMatch(recipe -> PinnedRecipes.isPinned(recipe.id()));
+                    .anyMatch(PinnedRecipes::isPinned);
 
             if (isPinned) {
                 pinned.add(collection);

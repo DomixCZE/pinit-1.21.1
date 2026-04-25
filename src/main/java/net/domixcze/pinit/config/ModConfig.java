@@ -11,13 +11,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ModConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final Path CONFIG_PATH = Paths.get("config", "pinit.json");
 
-    public List<Integer> pinnedSlotIndices = new java.util.ArrayList<>();
+    public List<Integer> pinnedSlotIndices = new ArrayList<>();
     public boolean totalCountMode = false;
     public boolean enableSlotPinning = true;
     public boolean enableRecipePinning = true;
@@ -29,7 +30,7 @@ public class ModConfig {
 
     public PinShape selectedShape = PinShape.SQUARE_PIN;
     public int pinColor = 0x5555ff;
-    public java.util.List<String> pinnedRecipeIds = new java.util.ArrayList<>();
+    public List<String> pinnedRecipeIds = new ArrayList<>();
 
     public enum PinShape {
         SQUARE_PIN(Identifier.of(PinIt.MOD_ID, "textures/gui/pin_base.png"), Identifier.of(PinIt.MOD_ID, "textures/gui/square_pin_overlay.png")),

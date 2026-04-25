@@ -6,7 +6,8 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.recipebook.AnimatedResultButton;
 import net.minecraft.client.gui.screen.recipebook.RecipeResultCollection;
 import net.minecraft.client.gui.widget.ClickableWidget;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.recipe.RecipeDisplayEntry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,9 +24,9 @@ public abstract class AnimatedResultButtonMixin {
         if (!ModConfig.INSTANCE.enableRecipePinning) return;
 
         if (this.resultCollection != null && !this.resultCollection.getAllRecipes().isEmpty()) {
-            Identifier id = this.resultCollection.getAllRecipes().getFirst().id();
+            RecipeDisplayEntry entry = this.resultCollection.getAllRecipes().getFirst();
 
-            if (PinnedRecipes.isPinned(id)) {
+            if (PinnedRecipes.isPinned(entry)) {
                 @SuppressWarnings("ConstantConditions")
                 ClickableWidget button = (ClickableWidget)(Object)this;
                 int x = button.getX() + 16;
@@ -37,20 +38,30 @@ public abstract class AnimatedResultButtonMixin {
                 context.getMatrices().translate(0, 0, 200);
 
                 if (shape.base != null) {
-                    context.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-                    context.drawTexture(shape.base, x, y, 0, 0, 8, 8, 8, 8);
+                    context.drawTexture(
+                            RenderLayer::getGuiTextured,
+                            shape.base,
+                            x, y,
+                            0.0F, 0.0F,
+                            8, 8,
+                            8, 8,
+                            0xFFFFFFFF
+                    );
                 }
 
                 if (shape.overlay != null) {
                     int color = ModConfig.INSTANCE.pinColor;
-                    float r = (float)(color >> 16 & 255) / 255.0F;
-                    float g = (float)(color >> 8 & 255) / 255.0F;
-                    float b = (float)(color & 255) / 255.0F;
+                    int argbColor = 0xFF000000 | color;
 
-                    context.setShaderColor(r, g, b, 1.0F);
-                    context.drawTexture(shape.overlay, x, y, 0, 0, 8, 8, 8, 8);
-
-                    context.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+                    context.drawTexture(
+                            RenderLayer::getGuiTextured,
+                            shape.overlay,
+                            x, y,
+                            0.0F, 0.0F,
+                            8, 8,
+                            8, 8,
+                            argbColor
+                    );
                 }
 
                 context.getMatrices().pop();

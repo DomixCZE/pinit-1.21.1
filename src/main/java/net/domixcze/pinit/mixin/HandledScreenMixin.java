@@ -7,6 +7,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.slot.Slot;
@@ -25,8 +26,8 @@ import java.util.List;
 public abstract class HandledScreenMixin {
 
     @Shadow @Nullable protected Slot focusedSlot;
-    @Shadow protected int x; // The left edge of the GUI background
-    @Shadow protected int y; // The top edge of the GUI background
+    @Shadow protected int x;
+    @Shadow protected int y;
 
     @Inject(method = "keyPressed", at = @At("HEAD"), cancellable = true)
     private void pinit$onInventoryKey(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
@@ -104,22 +105,35 @@ public abstract class HandledScreenMixin {
     private void pinit$drawPin(DrawContext context, int x, int y) {
         ModConfig.PinShape shape = ModConfig.INSTANCE.selectedShape;
         int color = ModConfig.INSTANCE.pinColor;
-        float r = (float)(color >> 16 & 255) / 255.0f;
-        float g = (float)(color >> 8 & 255) / 255.0f;
-        float b = (float)(color & 255) / 255.0f;
+        int argbColor = 0xFF000000 | color;
 
         context.getMatrices().push();
         context.getMatrices().translate(0, 0, 300);
 
         if (shape.base != null) {
-            context.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-            context.drawTexture(shape.base, x + 8, y, 0, 0, 8, 8, 8, 8);
+            context.drawTexture(
+                    RenderLayer::getGuiTextured,
+                    shape.base,
+                    x + 8, y,
+                    0.0F, 0.0F,
+                    8, 8,
+                    8, 8,
+                    0xFFFFFFFF
+            );
         }
+
         if (shape.overlay != null) {
-            context.setShaderColor(r, g, b, 1.0f);
-            context.drawTexture(shape.overlay, x + 8, y, 0, 0, 8, 8, 8, 8);
-            context.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
+            context.drawTexture(
+                    RenderLayer::getGuiTextured,
+                    shape.overlay,
+                    x + 8, y,
+                    0.0F, 0.0F,
+                    8, 8,
+                    8, 8,
+                    argbColor
+            );
         }
+
         context.getMatrices().pop();
     }
 }
