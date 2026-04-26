@@ -38,7 +38,7 @@ public abstract class RecipeBookWidgetMixin implements RecipeBookWidgetDuck {
                 PinnedRecipes.toggle(entry);
 
                 MinecraftClient.getInstance().getSoundManager().play(
-                        PositionedSoundInstance.master(ModSounds.PIN, 1.5F)
+                        PositionedSoundInstance.ui(ModSounds.PIN, 1.5F)
                 );
 
                 ((RecipeBookWidget<?>)(Object)this).refresh();

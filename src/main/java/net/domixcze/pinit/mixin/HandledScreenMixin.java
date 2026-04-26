@@ -56,13 +56,13 @@ public abstract class HandledScreenMixin {
                             pinned.add(invIndex);
                             success = true;
                         } else {
-                            MinecraftClient.getInstance().getSoundManager().play(PositionedSoundInstance.master(ModSounds.PIN_DENY, 0.5f));
+                            MinecraftClient.getInstance().getSoundManager().play(PositionedSoundInstance.ui(ModSounds.PIN_DENY, 0.5f));
                         }
 
                         if (success) {
                             ModConfig.saveConfig();
                             MinecraftClient.getInstance().getSoundManager().play(
-                                    PositionedSoundInstance.master(ModSounds.PIN, 1.2f)
+                                    PositionedSoundInstance.ui(ModSounds.PIN, 1.2f)
                             );
                             cir.setReturnValue(true);
                         }
