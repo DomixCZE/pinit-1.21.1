@@ -8,6 +8,7 @@ import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.input.KeyInput;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.slot.Slot;
@@ -30,9 +31,10 @@ public abstract class HandledScreenMixin {
     @Shadow protected int y;
 
     @Inject(method = "keyPressed", at = @At("HEAD"), cancellable = true)
-    private void pinit$onInventoryKey(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
+    private void pinit$onInventoryKey(KeyInput keyInput, CallbackInfoReturnable<Boolean> cir) {
         if (!ModConfig.INSTANCE.enableSlotPinning) return;
-        if (PinItClient.PIN_RECIPE_KEY.matchesKey(keyCode, scanCode)) {
+
+        if (PinItClient.PIN_RECIPE_KEY.matchesKey(keyInput)) {
             if (this.focusedSlot != null) {
                 Slot targetSlot = this.focusedSlot;
 

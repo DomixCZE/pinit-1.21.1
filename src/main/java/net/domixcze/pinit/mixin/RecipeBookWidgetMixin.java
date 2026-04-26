@@ -10,6 +10,7 @@ import net.minecraft.client.gui.screen.recipebook.AnimatedResultButton;
 import net.minecraft.client.gui.screen.recipebook.RecipeBookResults;
 import net.minecraft.client.gui.screen.recipebook.RecipeBookWidget;
 import net.minecraft.client.gui.screen.recipebook.RecipeResultCollection;
+import net.minecraft.client.input.KeyInput;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.recipe.RecipeDisplayEntry;
 import org.spongepowered.asm.mixin.Final;
@@ -26,10 +27,10 @@ public abstract class RecipeBookWidgetMixin implements RecipeBookWidgetDuck {
     private RecipeBookResults recipesArea;
 
     @Inject(method = "keyPressed", at = @At("HEAD"), cancellable = true)
-    private void pinit$onKeyPressed(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
+    private void pinit$onKeyPressed(KeyInput keyInput, CallbackInfoReturnable<Boolean> cir) {
         if (!ModConfig.INSTANCE.enableRecipePinning) return;
 
-        if (PinItClient.PIN_RECIPE_KEY.matchesKey(keyCode, scanCode)) {
+        if (PinItClient.PIN_RECIPE_KEY.matchesKey(keyInput)) {
             RecipeResultCollection hovered = this.pinit$getHoveredCollection();
 
             if (hovered != null && !hovered.getAllRecipes().isEmpty()) {
