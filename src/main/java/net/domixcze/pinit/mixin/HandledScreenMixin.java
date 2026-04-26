@@ -4,10 +4,10 @@ import net.domixcze.pinit.PinItClient;
 import net.domixcze.pinit.config.ModConfig;
 import net.domixcze.pinit.sound.ModSounds;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.slot.Slot;
@@ -107,12 +107,11 @@ public abstract class HandledScreenMixin {
         int color = ModConfig.INSTANCE.pinColor;
         int argbColor = 0xFF000000 | color;
 
-        context.getMatrices().push();
-        context.getMatrices().translate(0, 0, 300);
+        context.getMatrices().pushMatrix();
 
         if (shape.base != null) {
             context.drawTexture(
-                    RenderLayer::getGuiTextured,
+                    RenderPipelines.GUI_TEXTURED,
                     shape.base,
                     x + 8, y,
                     0.0F, 0.0F,
@@ -124,7 +123,7 @@ public abstract class HandledScreenMixin {
 
         if (shape.overlay != null) {
             context.drawTexture(
-                    RenderLayer::getGuiTextured,
+                    RenderPipelines.GUI_TEXTURED,
                     shape.overlay,
                     x + 8, y,
                     0.0F, 0.0F,
@@ -134,6 +133,6 @@ public abstract class HandledScreenMixin {
             );
         }
 
-        context.getMatrices().pop();
+        context.getMatrices().popMatrix();
     }
 }

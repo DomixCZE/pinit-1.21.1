@@ -2,11 +2,11 @@ package net.domixcze.pinit.mixin;
 
 import net.domixcze.pinit.config.ModConfig;
 import net.domixcze.pinit.util.PinnedRecipes;
+import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.recipebook.AnimatedResultButton;
 import net.minecraft.client.gui.screen.recipebook.RecipeResultCollection;
 import net.minecraft.client.gui.widget.ClickableWidget;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.recipe.RecipeDisplayEntry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -34,12 +34,11 @@ public abstract class AnimatedResultButtonMixin {
 
                 ModConfig.PinShape shape = ModConfig.INSTANCE.selectedShape;
 
-                context.getMatrices().push();
-                context.getMatrices().translate(0, 0, 200);
+                context.getMatrices().pushMatrix();
 
                 if (shape.base != null) {
                     context.drawTexture(
-                            RenderLayer::getGuiTextured,
+                            RenderPipelines.GUI_TEXTURED,
                             shape.base,
                             x, y,
                             0.0F, 0.0F,
@@ -54,7 +53,7 @@ public abstract class AnimatedResultButtonMixin {
                     int argbColor = 0xFF000000 | color;
 
                     context.drawTexture(
-                            RenderLayer::getGuiTextured,
+                            RenderPipelines.GUI_TEXTURED,
                             shape.overlay,
                             x, y,
                             0.0F, 0.0F,
@@ -64,7 +63,7 @@ public abstract class AnimatedResultButtonMixin {
                     );
                 }
 
-                context.getMatrices().pop();
+                context.getMatrices().popMatrix();
             }
         }
     }

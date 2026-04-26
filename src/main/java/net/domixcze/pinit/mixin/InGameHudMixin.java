@@ -2,9 +2,9 @@ package net.domixcze.pinit.mixin;
 
 import net.domixcze.pinit.config.ModConfig;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -56,8 +56,9 @@ public abstract class InGameHudMixin {
                 processedItems.add(stack.getItem());
             }
 
-            int count = ModConfig.INSTANCE.totalCountMode ?
-                    pinit$getTotalCount(client.player, stack.getItem()) : stack.getCount();
+            int count = ModConfig.INSTANCE.totalCountMode
+                    ? pinit$getTotalCount(client.player, stack.getItem())
+                    : stack.getCount();
 
             if (pinit$lastCounts.getOrDefault(invIndex, -1) != count) {
                 pinit$lastCounts.put(invIndex, count);
@@ -101,9 +102,9 @@ public abstract class InGameHudMixin {
 
     @Unique
     private void pinit$drawHudEntry(DrawContext context, MinecraftClient client, ItemStack stack, int count, int x, int y, boolean isLeft, float scale) {
-        context.getMatrices().push();
-        context.getMatrices().translate(x, y, 0);
-        context.getMatrices().scale(scale, scale, 1.0f);
+        context.getMatrices().pushMatrix();
+        context.getMatrices().translate(x, y);
+        context.getMatrices().scale(scale, scale);
 
         context.drawItem(stack, 0, 0);
 
@@ -112,12 +113,13 @@ public abstract class InGameHudMixin {
 
         int textX = isLeft ? 18 : -textWidth - 2;
 
-        context.drawTextWithShadow(client.textRenderer, text, textX, 4, ModConfig.INSTANCE.hudTextColor);
+        int textColor = 0xFF000000 | ModConfig.INSTANCE.hudTextColor;
+        context.drawTextWithShadow(client.textRenderer, text, textX, 4, textColor);
 
         int pinX = isLeft ? 0 : 8;
         pinit$renderPinOverlay(context, pinX, 0);
 
-        context.getMatrices().pop();
+        context.getMatrices().popMatrix();
     }
 
     @Unique
@@ -126,12 +128,11 @@ public abstract class InGameHudMixin {
         int color = ModConfig.INSTANCE.pinColor;
         int argbColor = 0xFF000000 | color;
 
-        context.getMatrices().push();
-        context.getMatrices().translate(0, 0, 200);
+        context.getMatrices().pushMatrix();
 
         if (shape.base != null) {
             context.drawTexture(
-                    RenderLayer::getGuiTextured,
+                    RenderPipelines.GUI_TEXTURED,
                     shape.base,
                     x, y,
                     0.0F, 0.0F,
@@ -143,7 +144,7 @@ public abstract class InGameHudMixin {
 
         if (shape.overlay != null) {
             context.drawTexture(
-                    RenderLayer::getGuiTextured,
+                    RenderPipelines.GUI_TEXTURED,
                     shape.overlay,
                     x, y,
                     0.0F, 0.0F,
@@ -153,6 +154,6 @@ public abstract class InGameHudMixin {
             );
         }
 
-        context.getMatrices().pop();
+        context.getMatrices().popMatrix();
     }
 }
